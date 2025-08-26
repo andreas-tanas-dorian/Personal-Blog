@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - Andreas Tanas Blog</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/resources.css' %}">
+</head>
+<body>
+    <header>
+        <h1>The Blog of a Young Audio Engineer</h1>
+    </header>
+
+    <div class="container">
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'form' %}">Form</a>
+            <a href="{% url 'gallery' %}">Gallery</a>
+            <a href="{% url 'chatbot' %}">Chatbot</a>
+            <a href="{% url 'resources' %}">Resources</a> 
+        </nav>
+
+        <div class="dropdown">
+            <button class="dropbtn">Categories</button>
+            <div class="dropdown-content">
+                <a href="#x32">X32 / M32 Presets</a>
+                <a href="#midas">Avantis Presets</a>
+                <a href="#playlists">Playlists</a>
+                <a href="#guides">Guides</a>
+            </div>
+        </div>
+
+        <main>
+            <section id="x32">
+                <h2>X32 / M32 Presets</h2>
+                <ul>
+                    <li><a href="{% static 'Downloads/X32_M32/FOH.scn' %}" download>FOH Rock Scene Preset</a></li>
+                    <li><a href="{% static '../Downloads/X32_M32/Broadcast_Template.scn' %}" download>Broadcast Template</a></li>
+                </ul>
+            </section>
+
+            <section id="midas">
+                <h2>Avantis Presets</h2>
+                <ul>
+                    <li><a href="{% static 'Downloads/Avantis/FOH.msz' %}" download>Basic FOH Template</a></li>
+                    <li><a href="{% static 'Downloads/Avantis/Orchestra.msz' %}" download>Orchestra monitor world template</a></li>
+                    <li><a href="{% static 'Downloads/Avantis/JazzyBit.msz' %}" download>My template for a local jazz band</a></li>
+                </ul>
+            </section>
+
+            <section id="playlists">
+                <h2>Playlists</h2>
+                <ul>
+                    <li><a href="{% static 'Downloads/Playlists/Virtual_Soundcheck_Songs.m3u' %}" download>Virtual Soundcheck Songs</a></li>
+                    <li><a href="{% static 'Downloads/Playlists/Reference_Tracks.m3u' %}" download>Reference Tracks</a></li>
+                </ul>
+            </section>
+
+            <section id="guides">
+                <h2>Guides</h2>
+                <ul>
+                    <li><a href="{% static 'Downloads/Guides/Checklist.pdf' %}" download>The Sound Engineers Checklist</a></li>
+                    <li><a href="{% static 'Downloads/Guides/Patching_sheet.pdf' %}" download>Stage Patching Template</a></li>
+                </ul>
+            </section>
+
+        </main>
+    </div>
+</body>
+</html>

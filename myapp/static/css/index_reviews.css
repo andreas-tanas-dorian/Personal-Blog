@@ -1,0 +1,82 @@
+/* Review Section Styling */
+section {
+    background-color: #1a1a1d;
+    margin-top: 40px;
+    padding: 30px 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.7);
+    animation: fadeInReviews 1s ease-out;
+}
+
+section h2 {
+    color: #1e90ff;
+    font-size: 1.8em;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #1e90ff;
+    padding-bottom: 10px;
+}
+
+section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+section li {
+    background-color: #2d2f33;
+    border-left: 4px solid #1e90ff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    transition: transform 0.2s ease-in-out;
+}
+
+section li:hover {
+    transform: scale(1.02);
+}
+
+section li p {
+    margin: 8px 0;
+    line-height: 1.5;
+}
+
+section li a {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 12px;
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+section li a:hover {
+    color: #1e90ff;
+    text-decoration: underline;
+}
+
+section > a[href*="submit_review"] {
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+    background-color: #1e90ff;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+}
+
+section > a[href*="submit_review"]:hover {
+    background-color: #1565c0;
+}
+
+@keyframes fadeInReviews {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}

@@ -1,0 +1,30 @@
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.search-bar input {
+    width: 60%;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    background-color: #4a4a4a;
+    font-family: 'Playfair Display', serif;
+    font-size: 1em;
+    color: #000000;
+    box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.search-bar input::placeholder {
+    color: #000000;
+    opacity: 0.7;
+}
+
+.search-bar input:focus {
+    outline: none;
+    background-color: #b5b3b3;
+    transform: scale(1.015);
+}

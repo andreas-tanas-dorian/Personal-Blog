@@ -1,0 +1,50 @@
+body {
+    background-color: #1e1e1e;
+    color: #f1f1f1;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.post-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #3a4445;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 0.8s ease-out forwards;
+}
+
+.post-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.post-container h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.post-container p {
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.post-date {
+    font-size: 0.9rem;
+    color: #cccccc;
+    margin-bottom: 20px;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

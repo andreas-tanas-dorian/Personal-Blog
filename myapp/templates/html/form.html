@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book a Meeting - Andreas Tanas</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/form.css' %}">
+    <script src="{% static 'js/form.js' %}"></script>
+</head>
+<body>
+<header>
+    <h1>Book a Meeting</h1>
+</header>
+
+<div class="container">
+    <nav>
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'form' %}">Form</a>
+        <a href="{% url 'gallery' %}">Gallery</a>
+        <a href="{% url 'chatbot' %}">Chatbot</a>
+        <a href="{% url 'resources' %}">Resources</a> 
+      </nav>
+
+    <p>Whether you just want some advice on starting your career, need technical assistance, or want to book me for an event, you can set up a free meeting by completing the form. Fill in all your details, and I will contact you to choose the date and time.</p>
+
+    <form action="#" method="POST" onsubmit="return validateForm()">
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age">
+
+        <label for="occupation">Occupation:</label>
+        <input type="text" id="occupation" name="occupation">
+
+        <label for="purpose">Purpose of Meeting Request:</label>
+        <textarea id="purpose" name="purpose" rows="4"></textarea>
+
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="date">
+
+        <label for="time">Preferred Time:</label>
+        <input type="time" id="time" name="time">
+
+        <button type="submit">Submit</button>
+    </form>
+</div>
+
+<footer>
+    <p>&copy; 2025 Andreas Tanas - Blog</p>
+</footer>
+</body>
+</html>

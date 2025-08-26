@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andreas Tanas - Blog</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index_BackToTop.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index_SearchPosts.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">   
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index_Reviews.css' %}">
+    <script src="{% static 'js/index_BackToTop.js' %}"></script>
+    <script src="{% static 'JS/index_SearchPosts.js' %}"></script>
+</head>
+<body>
+    <header>
+        <h1>The Blog of a Young Audio Engineer</h1>
+    </header>
+    <div class="container">
+
+
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'form' %}">Form</a>
+            <a href="{% url 'gallery' %}">Gallery</a>
+            <a href="{% url 'chatbot' %}">Chatbot</a>
+            <a href="{% url 'resources' %}">Resources</a> 
+          </nav>
+
+        <button onclick="scrollToTop()" id="scrollToTopBtn" title="Back to top">
+            <i class="fas fa-chevron-up"></i>
+        </button>
+
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search post...">
+        </div>
+        
+        {% block content %}
+            {% for post in posts %}
+               <div class="blog-post">
+                    <h2 class="post-title">{{ post.title }}</h2>
+                    <p id="post-date">Posted on {{ post.post_date }}</p>
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-small">
+                <p>{{ post.paragraph }}</p>
+                <a href="{% url 'post_detail' post.id %}">Read More</a>
+               </div>
+            {% endfor %}
+        {% endblock %}
+
+        <div class="blog-post">
+            <h2 class="post-title">Quantum 328 at FOH</h2>
+            <p>By Andreas Tanas, Posted on 22 Mar 2025</p>
+            <img src="{% static 'Images/gather.jpg' %}" alt="Gather25">
+            <p>While observing the FOH engineer mix the Gather25 conference at BT Arena using the DiGiCo Quantum 328 and Waves SoundGrid, I was absolutely blown away by the level of control and flexibility on display. The engineer was managing a massive range of inputs—from live speakers to media clips and instruments—while effortlessly maintaining a balanced sound for the huge venue using the Quantum 328’s advanced EQ, dynamics, and routing features. What truly blew my mind, though, was learning about the console’s Stealth Digital Processing™ technology, which uses FPGA (Field-Programmable Gate Array) chips for ultra-fast, high-quality audio processing. This allowed the Quantum 328 to handle over 1,000 audio channels at 96kHz with zero latency, an incredible feat most consoles can’t pull off at that scale. The real magic happened when the engineer seamlessly integrated Waves SoundGrid, which ran real-time plugins like EQs, compressors, and reverb without even taxing the console’s internal DSP. I couldn’t believe how the SoundGrid system offloaded some of the processing power, allowing the engineer to instantly manipulate every element of the sound without worrying about overloading the system. Watching it all come together in real-time was mind-blowing—this combination of high-speed processing, flexible routing, and plugin power gave the engineer virtually unlimited creative control, all while maintaining flawless sound throughout the performance. It was a perfect example of how cutting-edge technology, like Stealth Digital Processing and Waves SoundGrid, can revolutionize live sound in ways I never imagined.</p>
+        </div>
+
+        <div class="blog-post">
+            <h2 class="post-title">Started working on Midas HD96</h2>
+            <p>By Andreas Tanas, Posted on 26 Feb 2025</p>
+            <img src="{% static 'Images/midas_hd.jpeg' %}" alt="HD 96">
+            <p>Last week, I had the chance to work with a Midas HD96 for front of house and a Behringer Wing for monitors for the first time. It was an exciting experience, and the HD96 immediately stood out as one of my favorite consoles. The workflow felt incredibly smooth, with an intuitive interface and powerful processing capabilities that made mixing both efficient and enjoyable. The sound quality was top-tier, delivering the clarity and depth I expect from Midas. The Behringer Wing also performed well for monitors, offering flexibility and a solid feature set. Overall, it was a great learning experience, and I’m looking forward to working with these consoles more in the future.</p>
+        </div>
+
+        <div class="blog-post">
+            <h2 class="post-title">Why I use ABLETON</h2>
+            <p>By Andreas Tanas, Posted on 10 Feb 2025</p>
+            <img src="{% static 'Images/ableton.jpg' %}" alt="Ableton">
+            <p>Ableton Live has been my DAW of choice for years, and it's easy to see why. Whether I'm in the studio or on stage, it offers a unique combination of flexibility and functionality that other DAWs just can't match. In the studio, Ableton's intuitive interface and powerful tools make it perfect for everything from electronic music production to sound design. The session view is especially great for experimenting with loops and samples, which is a big part of my creative process. But what really sets Ableton apart for me is how well it translates into live performance. The ability to trigger clips, loops, and samples on the fly makes it the ideal tool for shows, and the seamless integration with MIDI controllers and other hardware keeps everything running smoothly during performances. Ableton Live makes it easy to move from the creative space in the studio to a live setting, allowing me to focus on the music instead of worrying about technical issues. That’s why it’s my go-to choice for both production and live work.</p>
+        </div>
+
+        <div class="blog-post">
+            <h2 class="post-title">Exploring Dante Audio Networking</h2>
+            <p>By Andreas Tanas, Posted on 1 Feb 2025</p>
+            <img src="{% static 'Images/dante.jpg' %}" alt="Dante">
+            <p>Dante has revolutionized audio networking by allowing seamless audio transmission over IP. Upgrading the audio system at Redrocks Church with a full Dante network was a huge step forward in flexibility and efficiency. The church was already using Allen & Heath Avantis consoles with their stageboxes, but transitioning to a Dante-based setup allowed for seamless digital audio routing, lower latency, and greater scalability. We replaced the old analog infrastructure with a fully networked system, integrating the Avantis consoles with multiple Allen & Heath DX and GX stageboxes, all connected over a managed gigabit network. This eliminated long analog cable runs, improved signal integrity, and made it easy to send and receive audio between different areas of the church, including the main sanctuary, broadcast feeds, and overflow rooms. Setting up Dante Controller was a crucial part of the process, ensuring proper clocking and redundancy for a rock-solid, glitch-free system. Now, with everything running over Dante, patching is effortless, virtual soundchecks are a breeze, and the entire workflow is more streamlined than ever.</p>
+        </div>
+
+        <div class="blog-post">
+            <h2 class="post-title">My Experience with In-Ear Monitors</h2>
+            <p>By Andreas Tanas, Posted on 20 Jan 2025</p>
+            <img src="{% static 'Images/iems.jpg' %}" alt="In-Ear Monitors">
+            <p>Making the switch from floor monitors to in-ear monitors (IEMs) has completely changed the way I approach live sound. The difference in stage clarity is incredible—no more dealing with excessive monitor bleed, phase issues, or constant feedback problems. Mixing monitors has become much more precise, giving each musician a clean, consistent mix without battling the unpredictable acoustics of the venue. It took some getting used to, especially for performers who were used to feeling the energy of stage wedges, but once they adjusted, the control and consistency won them over. Plus, hearing protection is a huge bonus—IEMs allow for lower volume levels without sacrificing detail. Overall, I don’t think I’d ever want to go back to wedges unless absolutely necessary.</p>
+        </div>
+    </div>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const searchInput = document.getElementById('searchInput');
+        console.log("Input:", searchInput);
+
+        if (!searchInput) {
+            console.error("searchInput not found!");
+            return;
+        }
+
+        searchInput.addEventListener('input', function () {
+            const filter = searchInput.value.toLowerCase();
+            const posts = document.querySelectorAll('.blog-post');
+            console.log("Searching for:", filter);
+
+            posts.forEach(post => {
+                const text = post.textContent.toLowerCase();
+                console.log("Checking post:", text);
+
+                if (text.includes(filter)) {
+                    post.style.display = '';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+<section>
+    <h2>Reviews</h2>
+    <ul>
+        {% for review in reviews %}
+        <li>
+            <p><strong>{{ review.email }}</strong> ({{ review.date }})</p>
+            <p>Rating: {{ review.rating }}</p>
+            <p>{{ review.comment }}</p>
+            <a href="{% url 'update_review' review.id %}">Update</a>
+            <a href="{% url 'delete_review' review.id %}">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'submit_review' %}">Leave a Review</a>
+</section>
+
+    <footer>
+        <p>&copy; 2025 Andreas Tanas - Blog</p>
+    </footer>
+
+</body>
+</html>

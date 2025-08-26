@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css' %}">
+    <script src="{% static 'js/gallery.js' %}"></script>
+</head>
+<body>
+<header>
+    <h1>Gallery</h1>
+</header>
+<nav>
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'about' %}">About</a>
+    <a href="{% url 'form' %}">Form</a>
+    <a href="{% url 'gallery' %}">Gallery</a>
+    <a href="{% url 'chatbot' %}">Chatbot</a>
+    <a href="{% url 'resources' %}">Resources</a> 
+  </nav>
+<div class="container">
+    <div class="slider">
+        <div class="slides">
+            <img src="{% static 'Images/imageq.jpg' %}" alt="Gather25">
+            <img src="{% static 'Images/image2.jpg' %}" alt="Gather25">
+            <img src="{% static 'Images/image3.jpg' %}" alt="Gather25">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+</div>
+<footer>
+    <p>&copy; 2025 My Blog. All rights reserved.</p>
+</footer>
+</body>
+</html>

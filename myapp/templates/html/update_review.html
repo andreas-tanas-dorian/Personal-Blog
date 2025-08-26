@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Review</title>
+    {%load static%}
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/update_review.css' %}">
+</head>
+<body>
+  <div class="review-wrapper">
+    <h1>Update a Review</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit updated review</button>
+    </form>
+    <a href="{% url 'home' %}">Back to Home</a>
+  </div>
+</body>
+</html>

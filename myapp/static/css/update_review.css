@@ -1,0 +1,79 @@
+body {
+    font-family: Helvetica, sans-serif;
+    background-color: #111112;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+.review-wrapper {
+    max-width: 650px;
+    margin: 80px auto;
+    background-color: #1d1e20;
+    padding: 40px;
+    border-radius: 12px;
+    border-left: 6px solid #ffcb05;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.6s ease-out;
+}
+
+h1 {
+    color: #ffcb05;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input, textarea, select {
+    background-color: #2e3033;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 12px;
+    color: #ffffff;
+    font-size: 1em;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #ffcb05;
+    box-shadow: 0 0 6px #ffcb05;
+    outline: none;
+}
+
+button {
+    padding: 12px;
+    background-color: #ffcb05;
+    border: none;
+    color: #000;
+    border-radius: 6px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #e6b800;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #cccccc;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}

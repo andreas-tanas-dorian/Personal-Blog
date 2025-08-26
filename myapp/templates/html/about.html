@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andreas Tanas - About</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+</head>
+<body>
+
+    <header>
+        About Me
+    </header>
+
+    <div class="container">
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'form' %}">Form</a>
+            <a href="{% url 'gallery' %}">Gallery</a>
+            <a href="{% url 'chatbot' %}">Chatbot</a>
+            <a href="{% url 'resources' %}">Resources</a> 
+          </nav>
+
+        <div class="profile">
+            <img src="{% static 'Images/andreas_tanas.jpeg' %}" alt="Gather25">
+            <h2>Andreas Tanas</h2>
+            <p>Hi! I'm Andreas. I'm a first year student, studying computer science at the West University of Timisoara. I started working as a stagehand in 2020 and later learned live audio mixing. Today I work part time as an audio engineer and I try to share my experience here on my blog with others.</p>
+        </div>
+
+        <div class="card">
+            <h3>Education</h3>
+            <table>
+                <tr>
+                    <th>Degree</th>
+                    <th>Institution</th>
+                    <th>Year</th>
+                </tr>
+                <tr>
+                    <td>B.Sc. Computer Science</td>
+                    <td>West University of Timișoara</td>
+                    <td>2025</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>Experience</h3>
+            <table>
+                <tr>
+                    <th>Position</th>
+                    <th>Organization</th>
+                    <th>Years</th>
+                </tr>
+                <tr>
+                    <td>Sound Engineer</td>
+                    <td>Freelance</td>
+                    <td>2019-Present</td>
+                </tr>
+                <tr>
+                    <td>Stage Tech</td>
+                    <td>Local Events</td>
+                    <td>2017-2019</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>Skills</h3>
+            <table>
+                <tr><th>Skill</th></tr>
+                <tr><td>Software Development</td></tr>
+                <tr><td>Live Sound Engineering</td></tr>
+                <tr><td>Sound System Tuning</td></tr>
+                <tr><td>Audio Mixing and Mastering</td></tr>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3>Achievements</h3>
+            <table>
+                <tr><th>Achievement</th></tr>
+                <tr><td>Successfully engineered live sound for over 50 events</td></tr>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2025 Andreas Tanas - Blog
+    </footer>
+
+</body>
+</html>

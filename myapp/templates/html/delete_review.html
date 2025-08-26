@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Review</title>
+    {%load static%}
+    <link rel="stylesheet" type = "text/css" href="{% static 'css/delete_review.css' %}">
+</head>
+<body>
+  <div class="review-wrapper">
+    <h1>Are you sure you want to delete this review?</h1>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Delete this review</button>
+    </form>
+    <a href="{% url 'home' %}">Back to Home</a>
+  </div>
+</body>
+</html>

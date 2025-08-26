@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot - Andreas Tanas</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/chatbot.css' %}">
+</head>
+<body>
+    <header>
+        <h1>Ask Me Anything!</h1>
+    </header>
+
+    <div class="container">
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'about' %}">About</a>
+            <a href="{% url 'form' %}">Form</a>
+            <a href="{% url 'gallery' %}">Gallery</a>
+            <a href="{% url 'chatbot' %}">Chatbot</a>
+            <a href="{% url 'resources' %}">Resources</a> 
+          </nav>
+          
+        <div class="chatbot-container">
+            <div class="chat-box" id="chat-box">
+            </div>
+            <form id="chat-form">
+                <input type="text" id="user-input" placeholder="Type your message..." required>
+                <button type="submit"><i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Andreas Tanas - Blog</p>
+    </footer>
+
+    <script src="{% static 'js/chatbot.js' %}"></script>
+</body>
+</html>
